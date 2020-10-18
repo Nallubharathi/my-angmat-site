@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>SimpleCRM</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/accounts'"> Accounts </a>
+      <a mat-button [routerLink]="'/create-account'"> Create Account </a>
+      <a mat-button [routerLink]="'/contacts'"> Contacts </a>
+      <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
+      <a mat-button [routerLink]="'/activities'"> Activities </a>
+      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+    </div>
+  </mat-toolbar-row>
+<mat-toolbar-row>
+      <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+      <li><a mat-list-item [routerLink]="'/accounts'"> Accounts </a></li>
+      <li><a mat-list-item [routerLink]="'/create-account'"> Create Account </a></li>
+      <li><a mat-list-item [routerLink]="'/contacts'"> Contacts </a></li>
+      <li><a mat-list-item [routerLink]="'/create-contact'"> Create Contact </a></li>
+      <li><a mat-list-item [routerLink]="'/activities'"> Activities </a></li>
+      <li><a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a></li>
+      <li><a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a></li>
+</mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+  <div class="main">
+
+    <router-outlet></router-outlet>
+  </div>
+  <!-- body container ends -->
+</mat-sidenav-container>
